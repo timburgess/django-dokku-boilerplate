@@ -4,11 +4,7 @@ from .base import env
 
 # GENERAL
 # ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = env(
-    "DJANGO_SECRET_KEY",
-    default="Y64mmoiwVaNqzyMQRcNGYxzicHCOGx9QQERsODNsbWqZSEb1iFzG1kkPKFlP3eGE",
-)
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["dokku.accordbox.com"])
 
@@ -58,22 +54,6 @@ if 'DATABASE_URL' in env:
 # SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 #     "DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True
 # )
-
-# STATIC
-# ------------------------
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-# MEDIA
-# ------------------------------------------------------------------------------
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_S3_FILE_OVERWRITE = False
-
-MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
