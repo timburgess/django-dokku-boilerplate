@@ -37,14 +37,15 @@ Host ubuntu1
 
 7. Create a new app: `dokku apps:create simple-dokku`
 
-8. Create environment variables for the `simple-dokku` app.
-Set django allowed hosts with `dokku config:set simple-dokku DJANGO_ALLOWED_HOSTS='*'` As nginx front-ends django this can be *.
+8. Create environment variables for the `simple-dokku` app:
+```
+dokku config:set simple-dokku DJANGO_ALLOWED_HOSTS='*'
+dokku config:set simple-dokku DJANGO_SECRET_KEY='your-secret-key here'
+dokku config:set simple-dokku DJANGO_SETTINGS_MODULE='config.settings.local'
+dokku config:set simple-dokku DISABLE_COLLECTSTATIC=1
+```
 
-9. Add your secret key: `dokku config:set simple-dokku DJANGO_SECRET_KEY='your-secret-key here'`
-
-10. Tell Django where to find settings: `dokku config:set simple-dokku DJANGO_SETTINGS_MODULE='config.settings.local'`
-
-11. Double-check your environment settings: `dokku config:show simple-dokku`
+9. Double-check your environment settings: `dokku config:show simple-dokku`
 
 
 ## Step 2 - Clone and deploy the application
