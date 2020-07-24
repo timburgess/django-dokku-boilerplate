@@ -35,7 +35,7 @@ Host ubuntu1
 
 6. Visit the server homepage and in the form, confirm the public key and hostname. Hostname can simply be the ip address. Do not check 'virtual naming'.
 
-7. Create an new app: `dokku apps:create simple-dokku`
+7. Create a new app: `dokku apps:create simple-dokku`
 
 8. Create environment variables for the `simple-dokku` app. Set django allowed hosts with `dokku config:set simple-dokku DJANGO_ALLOWED_HOSTS='*'` As nginx front-ends django this can be *.
 
