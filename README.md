@@ -8,7 +8,7 @@ on learning Dokku rather than hacking around in Django internals
 
 In a nutshell,
 
-- setup an Ubuntu 18.04.03 LTS machine running Dokku version 0.21.3
+- setup an Ubuntu 18.04.03 LTS machine running [Dokku version 0.21.3](http://dokku.viewdocs.io/dokku/#install-apt)
 
 - create an app name: `dokku apps:create simple-dokku`
 
@@ -26,3 +26,4 @@ dokku config:set simple-dokku DJANGO_SECRET_KEY='your-custom-secret-key-here'
 
 - push to dokku! `git push dokku master`
 
+- visit your Ubuntu server at the reported deployment port to see the default Django page
