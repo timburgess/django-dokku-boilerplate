@@ -37,9 +37,10 @@ Host ubuntu1
 
 7. Create a new app: `dokku apps:create simple-dokku`
 
-8. Create environment variables for the `simple-dokku` app. Set django allowed hosts with `dokku config:set simple-dokku DJANGO_ALLOWED_HOSTS='*'` As nginx front-ends django this can be *.
+8. Create environment variables for the `simple-dokku` app.
+Set django allowed hosts with `dokku config:set simple-dokku DJANGO_ALLOWED_HOSTS='*'` As nginx front-ends django this can be *.
 
-9. Add your secret key: `dokku config:set simple-dokku DJANGO_SECRET_KEY='your-secret-key here'
+9. Add your secret key: `dokku config:set simple-dokku DJANGO_SECRET_KEY='your-secret-key here'`
 
 10. Tell Django where to find settings: `dokku config:set simple-dokku DJANGO_SETTINGS_MODULE='config.settings.local'`
 
@@ -50,7 +51,7 @@ Host ubuntu1
 
 1. Clone this repo: `git clone https://github.com/timburgess/django-dokku-boilerplate.git`
 
-2. Add a remote repository (the dokku server): `git remote add dokku dokku@ubuntu1:simple-dokku`
+2. Add a remote git repository (the dokku server): `git remote add dokku dokku@ubuntu1:simple-dokku`
 
 3. Confirm the remote repository details: `git remote -v`
 
