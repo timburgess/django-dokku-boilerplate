@@ -27,3 +27,5 @@ dokku config:set simple-dokku DJANGO_SECRET_KEY='your-custom-secret-key-here'
 - push to dokku! `git push dokku master`
 
 - visit your Ubuntu server at the reported deployment port to see the default Django page
+
+See [INSTALL.md](INSTALL.md) for the exact steps
