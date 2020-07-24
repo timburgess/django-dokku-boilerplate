@@ -15,13 +15,13 @@ There are essentially two parts to get to a simple Django app running in Dokku:
 
 ## Step 1 - Setup a Dokku server
 
-1. Create a vanilla Ubuntu 18.04.03 LTS server in the cloud (Digital Ocean provides a Dokku 0.17.9 'droplet' but this repo will not deploy seamlessly on an older version of Dokku)
+1. Create a vanilla Ubuntu 18.04.03 LTS server in the cloud (Digital Ocean provides a Dokku 0.17.9 'droplet' but this repo will not deploy seamlessly on an older version of such as 0.17.9)
 
 2. Create an ssh key pair if you don't have one already for password-less login. Your cloud provider should provide instructions about how to create a ssh public/private key pair.
 
 3. Setup an ssh connection to your server with a `.ssh/config` file. Something like:
 ```
-Host dokku1
+Host ubuntu1
         ForwardAgent yes
         Hostname 164.164.164.164
         Port 22
@@ -50,7 +50,7 @@ Host dokku1
 
 1. Clone this repo: `git clone https://github.com/timburgess/django-dokku-boilerplate.git`
 
-2. Add a remote repository (the dokku server): `git remote add dokku dokku@dokku1:simple-dokku`
+2. Add a remote repository (the dokku server): `git remote add dokku dokku@ubuntu1:simple-dokku`
 
 3. Confirm the remote repository details: `git remote -v`
 
@@ -114,9 +114,9 @@ remote: cp: cannot stat '/tmp/build/requirements.txt': No such file or directory
 -----> Shutting down old containers in 60 seconds
        583b00ca3b0a5712307f840239705e8224a66d40ce307745902f30dc58c33d2b
 =====> Application deployed:
-       http://dokku1:6632
+       http://ubuntu1:6632
 
-To dokku1:simple-dokku
+To ubuntu1:simple-dokku
    f2f79fa..73b2133  master -> master
 ```
 This repository uses `pipenv` (which Dokku understands) rather than a requirements.txt file. The requirements.txt error can be ignored.
