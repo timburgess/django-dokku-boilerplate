@@ -8,7 +8,7 @@ on learning Dokku rather than hacking around in Django internals
 
 In a nutshell,
 
-- setup an Ubuntu 18.04.03 LTS machine running [Dokku version 0.21.3](http://dokku.viewdocs.io/dokku/#install-apt)
+- setup an Ubuntu 18.04 LTS machine running [Dokku version 0.21.4](http://dokku.viewdocs.io/dokku/#install-apt)
 
 - create an app name: `dokku apps:create simple-dokku`
 
